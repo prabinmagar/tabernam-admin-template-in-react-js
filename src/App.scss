@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+/*** Common variables ***/
+:root {
+  // colors
+  --blue-color: #475be8;
+  --green-color: #4ce13f;
+  --orange-color: #f29a2e;
+  --red-color: #ef0606;
+  --dark-color: #292929;
+  --light-color: #ffffff;
+  // typography
+  --font-family-lato: "Lato", sans-serif;
+  --font-family-manrope: "Manrope", sans-serif;
+  --font-size: 16px;
+  --line-height: 1.6;
+  --font-weight: 400;
+  // transition
+  --default-transition: all 300ms ease-in-out;
+  // chart
+  --chart-primary-color: #475be8;
+  --chart-secondary-color: #e6e6e6;
+  // box shadow
+  --light-shadow1: rgba(0, 0, 0, 0.02) 0px 4px 12px;
+}
+
+// color mode toggle mixins
+@mixin lightMode {
+  --primary-color: #475be8;
+  --secondary-color: #fff;
+  --background-color: #fafafa;
+  --side-link-hover-color: #f6f6f6;
+  --side-text-color: #808191;
+  --logo-color: var(--primary-color);
+  --xl-text-color: #292929;
+  --lg-text-color: #525252;
+  --base-text-color: #676767;
+  --text-color-inverted: #292929;
+  --bg-color-inverted: #ffffff;
+  --side-dropdown-border-color: #F3F3F3;
+  --side-dropdown-bg-color: #fff; 
+  --side-dropdown-icon-color: var(--primary-color);
+}
+
+@mixin darkMode {
+  --primary-color: #475be8;
+  --secondary-color: #2e2e48;
+  --background-color: #383854;
+  --side-link-hover-color: #525270;
+  --side-text-color: #e1e1e1;
+  --logo-color: #fff;
+  --xl-text-color: #ffff;
+  --lg-text-color: #f3f3f3;
+  --base-text-color: #e0e0e0;
+  --text-color-inverted: #fff;
+  --bg-color-inverted: #292929;
+  --side-dropdown-border-color: #525270;
+  --side-dropdown-bg-color: #525270; 
+  --side-dropdown-icon-color: #BDBDBD;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+// color mode toggle in body
+body {
+  font-family: var(--font-family-lato);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  // by default light mode is on
+  @include lightMode();
+
+  // add dark-mode class on the body if dark mode is set true
+  &.dark-mode {
+    @include darkMode();
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+}
+
+// theme toggle button
+.theme-toggle-btn {
+  background-color: var(--bg-color-inverted);
+  position: fixed;
+  right: 0;
+  top: 20px;
+  width: 48px;
+  height: 40px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: 0;
+  z-index: 999;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  .theme-icon {
+    width: 24px;
+  }
+}
+
+.content-wrapper{
+  background-color: var(--background-color);
+  min-height: 100vh;
+  padding: 50px 58px;
+  margin-left: 280px;
+}
+
+// content
+.content-area{
+  display: grid;
+  gap: 16px;
+}

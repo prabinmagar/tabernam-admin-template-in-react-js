@@ -3,9 +3,27 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  flex-wrap: wrap;
 
   .area-top-title {
     color: var(--text-color-inverted);
+  }
+
+  .area-top-l {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+  }
+
+  .sidebar-open-btn {
+    display: inline-flex;
+    align-items: center;
+    display: none;
+    margin-bottom: -1px;
+
+    @media (max-width: 768px) {
+      display: inline-flex;
+    }
   }
 
   //   react-date-range plugin theme customization
@@ -33,10 +51,13 @@
       background-color: var(--light-color);
       padding-top: 0;
       height: 40px;
+      z-index: 1;
     }
     .rdrMonth {
       padding: 0;
+      z-index: 1;
     }
+
     .rdrWeekDays {
       position: absolute;
       top: calc(100% + 40px);
@@ -44,6 +65,7 @@
       width: 100%;
       background-color: var(--light-color);
       height: 32px;
+      z-index: 1;
     }
 
     .rdrDays {
@@ -52,6 +74,7 @@
       left: 0;
       width: 100%;
       background-color: var(--light-color);
+      z-index: 1;
     }
 
     &.hide-date-range {

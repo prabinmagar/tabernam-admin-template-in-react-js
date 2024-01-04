@@ -2,10 +2,14 @@ import "./AreaTop.scss";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { addDays } from "date-fns";
+import { MdOutlineMenu } from "react-icons/md";
+import { SidebarContext } from "../../../context/SidebarContext";
 
 const AreaTop = () => {
+  const { openSidebar } = useContext(SidebarContext);
+
   const [state, setState] = useState([
     {
       startDate: new Date(),
@@ -34,8 +38,15 @@ const AreaTop = () => {
   }, []);
 
   return (
-    <div className="content-area-top">
+    <section className="content-area-top">
       <div className="area-top-l">
+        <button
+          className="sidebar-open-btn"
+          type="button"
+          onClick={openSidebar}
+        >
+          <MdOutlineMenu size={24} />
+        </button>
         <h2 className="area-top-title">Dashboard</h2>
       </div>
       <div className="area-top-r">
@@ -55,7 +66,7 @@ const AreaTop = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

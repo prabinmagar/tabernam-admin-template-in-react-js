@@ -1,9 +1,132 @@
-.content-area-charts{
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+.content-area-charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 100%;
+  }
 }
 
-.bar-chart-wrapper{
+// bar chart
+.bar-chart {
+  background: var(--secondary-color);
+  padding: 16px 16px 6px 16px;
+  border-radius: 5px;
+  box-shadow: var(--light-shadow1);
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+
+  .bar-chart-wrapper {
     width: 100%;
-    height: 280px;
+    height: 240px;
+
+    // recharts customization
+    .recharts-wrapper {
+      @media (max-width: 1400px) {
+        margin-left: -10px;
+      }
+    }
+  }
+
+  .bar-chart-info {
+    margin-bottom: 32px;
+  }
+
+  .bar-chart-title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-color-inverted);
+  }
+
+  .chart-info-data {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+  }
+
+  .info-data-value {
+    color: var(--xl-text-color);
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .info-data-text {
+    display: flex;
+    align-items: center;
+    column-gap: 3px;
+    color: var(--green-color);
+  }
+
+  // customization of recharts - bar chart
+  .recharts-default-legend {
+    position: absolute;
+    top: -90px;
+    right: 0;
+  }
+  .recharts-tooltip-label {
+    color: var(--text-color-inverted);
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+// progress chart
+.progress-bar {
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: var(--light-shadow1);
+  background: var(--secondary-color);
+
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+
+  .progress-bar-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-color-inverted);
+    margin-bottom: 16px;
+  }
+
+  .bar-item-info {
+    display: flex;
+    align-items: centers;
+    justify-content: space-between;
+    column-gap: 6px;
+    margin-bottom: 8px;
+
+    .bar-item-info-name,
+    .bar-item-info-value {
+      color: var(--text-color-inverted);
+      font-weight: 600;
+    }
+  }
+
+  .progress-bar-list {
+    display: grid;
+    row-gap: 20px;
+  }
+
+  .bar-item-full {
+    width: 100%;
+    height: 10px;
+    border-radius: 100vh;
+    background-color: var(--chart-secondary-color);
+    position: relative;
+  }
+  
+  .bar-item-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 100vh;
+    background-color: var(--chart-primary-color);
+  }
 }

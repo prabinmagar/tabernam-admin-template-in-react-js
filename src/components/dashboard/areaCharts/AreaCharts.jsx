@@ -1,12 +1,13 @@
 import AreaBarChart from "./AreaBarChart";
 import "./AreaCharts.scss";
+import AreaProgressChart from "./AreaProgressChart";
 
 const AreaCharts = () => {
   return (
-    <div className="content-area-charts">
-        <AreaBarChart />
-        <div></div>
-    </div>
+    <section className="content-area-charts">
+      <AreaBarChart />
+      <AreaProgressChart />
+    </section>
   );
 };
 

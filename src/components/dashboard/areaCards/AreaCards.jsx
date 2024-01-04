@@ -3,7 +3,7 @@ import "./AreaCards.scss";
 
 const AreaCards = () => {
   return (
-    <div className="content-area-cards">
+    <section className="content-area-cards">
       <AreaCard
         colors={["#E4E8EF", "#475BE8"]}
         percentFillValue={80}
@@ -15,7 +15,7 @@ const AreaCards = () => {
       />
       <AreaCard
         colors={["#E4E8EF", "#4CE13F"]}
-        percentFillValue={80}
+        percentFillValue={50}
         cardInfo={{
           title: "Todays Revenue",
           value: "$8.2K",
@@ -24,14 +24,14 @@ const AreaCards = () => {
       />
       <AreaCard
         colors={["#E4E8EF", "#F29A2E"]}
-        percentFillValue={80}
+        percentFillValue={40}
         cardInfo={{
           title: "In Escrow",
           value: "$18.2K",
           text: "Availabale to payout",
         }}
       />
-    </div>
+    </section>
   );
 };
 

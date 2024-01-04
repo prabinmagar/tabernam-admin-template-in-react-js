@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import PropTypes from "prop-types";
 
 const AreaCard = ({ colors, percentFillValue, cardInfo }) => {
@@ -10,7 +10,7 @@ const AreaCard = ({ colors, percentFillValue, cardInfo }) => {
     { name: "Achieved Sales", value: filledValue },
   ];
 
-  const renderTooltipContent = (value, name, props) => {
+  const renderTooltipContent = (value) => {
     return `${(value / 360) * 100} %`;
   };
 
@@ -43,7 +43,6 @@ const AreaCard = ({ colors, percentFillValue, cardInfo }) => {
             ))}
           </Pie>
           <Tooltip formatter={renderTooltipContent} />
-          {/* <Legend /> */}
         </PieChart>
       </div>
     </div>

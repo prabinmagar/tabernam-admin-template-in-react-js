@@ -3,6 +3,14 @@
   grid-template-columns: repeat(3, 1fr);
   margin-top: 12px;
   gap: 16px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 100%;
+  }
 }
 
 .area-card {
@@ -14,37 +22,44 @@
   justify-content: space-between;
   box-shadow: var(--light-shadow1);
 
+  @media (max-width: 768px) {
+    padding: 12px;
+  }
+
   .info-title {
     color: var(--lg-text-color);
     font-size: 18px;
     margin-bottom: 8px;
     font-weight: bold;
   }
+
   .info-value {
     color: var(--xl-text-color);
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 8px;
   }
+
   .info-text {
     color: var(--base-text-color);
     font-weight: 500;
   }
 }
 
+// global recharts tooltip customization
 .recharts-default-tooltip {
   padding: 4px 8px !important;
-  border: none !important;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 4px 12px;
   border-radius: 4px;
   background-color: var(--secondary-color) !important;
+  border: 1px solid var(--border-color-inverted) !important;
 }
 
 .recharts-tooltip-item-list {
   * {
     color: var(--text-color-inverted) !important;
     font-size: 14px;
-    font-family: inherit!important;
+    font-family: inherit !important;
     opacity: 0.9;
   }
 }

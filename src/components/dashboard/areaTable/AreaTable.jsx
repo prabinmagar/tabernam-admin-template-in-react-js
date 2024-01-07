@@ -1,5 +1,5 @@
-import "./AreaTable.scss";
 import AreaTableAction from "./AreaTableAction";
+import "./AreaTable.scss";
 
 const TABLE_HEADS = [
   "Products",
@@ -88,7 +88,7 @@ const AreaTable = () => {
               return (
                 <tr key={dataItem.id}>
                   <td>{dataItem.name}</td>
-                  <td>#{dataItem.order_id}</td>
+                  <td>{dataItem.order_id}</td>
                   <td>{dataItem.date}</td>
                   <td>{dataItem.customer}</td>
                   <td>

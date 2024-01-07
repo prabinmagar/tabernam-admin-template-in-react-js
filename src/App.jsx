@@ -1,17 +1,19 @@
-import { ThemeContext } from "./context/ThemeContext";
-import "./App.scss";
 import { useContext, useEffect } from "react";
+import "./App.scss";
+import { ThemeContext } from "./context/ThemeContext";
+import { DARK_THEME, LIGHT_THEME } from "./constants/themeConstants";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Dashboard, PageNotFound } from "./screens";
 import MoonIcon from "./assets/icons/moon.svg";
 import SunIcon from "./assets/icons/sun.svg";
 import BaseLayout from "./layout/BaseLayout";
+import { Dashboard, PageNotFound } from "./screens";
 
 function App() {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
+  // adding dark-mode class if the dark mode is set on to the body tag
   useEffect(() => {
-    if (theme === "dark") {
+    if (theme === DARK_THEME) {
       document.body.classList.add("dark-mode");
     } else {
       document.body.classList.remove("dark-mode");
@@ -27,6 +29,7 @@ function App() {
             <Route path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
+
         <button
           type="button"
           className="theme-toggle-btn"
@@ -34,8 +37,7 @@ function App() {
         >
           <img
             className="theme-icon"
-            src={theme === "light" ? SunIcon : MoonIcon}
-            alt="theme icon"
+            src={theme === LIGHT_THEME ? SunIcon : MoonIcon}
           />
         </button>
       </Router>

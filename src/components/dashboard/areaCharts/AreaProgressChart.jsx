@@ -2,27 +2,27 @@ const data = [
   {
     id: 1,
     name: "Jeans",
-    percentValue: 70,
+    percentValues: 70,
   },
   {
     id: 2,
     name: "Shirts",
-    percentValue: 40,
+    percentValues: 40,
   },
   {
     id: 3,
     name: "Belts",
-    percentValue: 60,
+    percentValues: 60,
   },
   {
     id: 4,
     name: "Caps",
-    percentValue: 80,
+    percentValues: 80,
   },
   {
     id: 5,
     name: "Others",
-    percentValue: 20,
+    percentValues: 20,
   },
 ];
 
@@ -39,13 +39,15 @@ const AreaProgressChart = () => {
               <div className="bar-item-info">
                 <p className="bar-item-info-name">{progressbar.name}</p>
                 <p className="bar-item-info-value">
-                  {progressbar.percentValue}%
+                  {progressbar.percentValues}
                 </p>
               </div>
               <div className="bar-item-full">
                 <div
                   className="bar-item-filled"
-                  style={{ width: `${progressbar.percentValue}%` }}
+                  style={{
+                    width: `${progressbar.percentValues}%`,
+                  }}
                 ></div>
               </div>
             </div>

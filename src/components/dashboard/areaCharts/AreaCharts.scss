@@ -10,7 +10,7 @@
 
 // bar chart
 .bar-chart {
-  background: var(--secondary-color);
+  background-color: var(--secondary-color);
   padding: 16px 16px 6px 16px;
   border-radius: 5px;
   box-shadow: var(--light-shadow1);
@@ -92,10 +92,9 @@
     color: var(--text-color-inverted);
     margin-bottom: 16px;
   }
-
   .bar-item-info {
     display: flex;
-    align-items: centers;
+    align-items: center;
     justify-content: space-between;
     column-gap: 6px;
     margin-bottom: 8px;
@@ -106,7 +105,6 @@
       font-weight: 600;
     }
   }
-
   .progress-bar-list {
     display: grid;
     row-gap: 20px;
@@ -119,7 +117,7 @@
     background-color: var(--chart-secondary-color);
     position: relative;
   }
-  
+
   .bar-item-filled {
     position: absolute;
     top: 0;

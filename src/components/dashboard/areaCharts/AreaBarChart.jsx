@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import {
   BarChart,
   Bar,
@@ -7,10 +8,10 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { FaArrowUpLong } from "react-icons/fa6";
-import { useContext } from "react";
 import { ThemeContext } from "../../../context/ThemeContext";
+import { FaArrowUpLong } from "react-icons/fa6";
 import { LIGHT_THEME } from "../../../constants/themeConstants";
+import "./AreaCharts.scss";
 
 const data = [
   {
@@ -88,7 +89,7 @@ const AreaBarChart = () => {
         </div>
       </div>
       <div className="bar-chart-wrapper">
-        <ResponsiveContainer>
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             width={500}
             height={200}
@@ -118,7 +119,6 @@ const AreaBarChart = () => {
               tickSize={0}
               tick={{
                 fill: `${theme === LIGHT_THEME ? "#676767" : "#f3f3f3"}`,
-                fontSize: 14,
               }}
             />
             <Tooltip
@@ -134,19 +134,19 @@ const AreaBarChart = () => {
             />
             <Bar
               dataKey="profit"
-              fill="#475BE8"
-              radius={[4, 4, 4, 4]}
-              barSize={24}
+              fill="#475be8"
               activeBar={false}
               isAnimationActive={false}
+              barSize={24}
+              radius={[4, 4, 4, 4]}
             />
             <Bar
               dataKey="loss"
-              fill="#E3E7FC"
-              radius={[4, 4, 4, 4]}
-              barSize={24}
+              fill="#e3e7fc"
               activeBar={false}
               isAnimationActive={false}
+              barSize={24}
+              radius={[4, 4, 4, 4]}
             />
           </BarChart>
         </ResponsiveContainer>

@@ -1,6 +1,6 @@
 import { AreaCards, AreaCharts, AreaTable, AreaTop } from "../../components";
 
-const DashboardScreen = () => {
+const Dashboard = () => {
   return (
     <div className="content-area">
       <AreaTop />
@@ -11,4 +11,4 @@ const DashboardScreen = () => {
   );
 };
 
-export default DashboardScreen;
+export default Dashboard;

@@ -1,6 +1,5 @@
-import AreaBarChart from "./AreaBarChart";
-import "./AreaCharts.scss";
-import AreaProgressChart from "./AreaProgressChart";
+import AreaBarChart from "./AreaBarChart"
+import AreaProgressChart from "./AreaProgressChart"
 
 const AreaCharts = () => {
   return (
@@ -8,7 +7,7 @@ const AreaCharts = () => {
       <AreaBarChart />
       <AreaProgressChart />
     </section>
-  );
-};
+  )
+}
 
-export default AreaCharts;
+export default AreaCharts

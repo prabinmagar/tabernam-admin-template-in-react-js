@@ -1,34 +1,35 @@
 import { useContext, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import { ThemeContext } from "../../context/ThemeContext";
 import { LIGHT_THEME } from "../../constants/themeConstants";
-import "./Sidebar.scss";
-import {
-  MdOutlineGridView,
-  MdOutlineBarChart,
-  MdOutlineAttachMoney,
-  MdOutlineCurrencyExchange,
-  MdOutlineShoppingBag,
-  MdOutlinePeople,
-  MdOutlineMessage,
-  MdOutlineSettings,
-  MdOutlineLogout,
-  MdOutlineClose,
-} from "react-icons/md";
-import { SidebarContext } from "../../context/SidebarContext";
 import LogoBlue from "../../assets/images/logo_blue.svg";
 import LogoWhite from "../../assets/images/logo_white.svg";
+import {
+  MdOutlineAttachMoney,
+  MdOutlineBarChart,
+  MdOutlineClose,
+  MdOutlineCurrencyExchange,
+  MdOutlineGridView,
+  MdOutlineLogout,
+  MdOutlineMessage,
+  MdOutlinePeople,
+  MdOutlineSettings,
+  MdOutlineShoppingBag,
+} from "react-icons/md";
+import { Link } from "react-router-dom";
+import "./Sidebar.scss";
+import { SidebarContext } from "../../context/SidebarContext";
 
 const Sidebar = () => {
   const { theme } = useContext(ThemeContext);
   const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
   const navbarRef = useRef(null);
 
+  // closing the navbar when clicked outside the sidebar area
   const handleClickOutside = (event) => {
     if (
       navbarRef.current &&
       !navbarRef.current.contains(event.target) &&
-      event.target.className !== "sidebar-open-btn"
+      event.target.className !== "sidebar-oepn-btn"
     ) {
       closeSidebar();
     }

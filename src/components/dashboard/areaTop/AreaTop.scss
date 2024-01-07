@@ -20,13 +20,14 @@
     align-items: center;
     display: none;
     margin-bottom: -1px;
+    color: var(--text-color-inverted);
 
     @media (max-width: 768px) {
       display: inline-flex;
     }
   }
 
-  //   react-date-range plugin theme customization
+  // react-date-range plugin theme customization
   .date-range-wrapper {
     display: inline-block;
     box-shadow: var(--light-shadow1);
@@ -53,6 +54,7 @@
       height: 40px;
       z-index: 1;
     }
+
     .rdrMonth {
       padding: 0;
       z-index: 1;
@@ -94,6 +96,7 @@
       background-color: var(--secondary-color);
       border-color: var(--secondary-color);
       outline: var(--secondary-color);
+
       * {
         background-color: var(--secondary-color);
         border-color: var(--secondary-color);

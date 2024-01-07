@@ -1,11 +1,11 @@
-import "./AreaTop.scss";
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
-import { DateRange } from "react-date-range";
-import { useContext, useEffect, useRef, useState } from "react";
-import { addDays } from "date-fns";
 import { MdOutlineMenu } from "react-icons/md";
+import "./AreaTop.scss";
+import { useContext, useEffect, useRef, useState } from "react";
 import { SidebarContext } from "../../../context/SidebarContext";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { addDays } from "date-fns";
+import { DateRange } from "react-date-range";
 
 const AreaTop = () => {
   const { openSidebar } = useContext(SidebarContext);
@@ -17,6 +17,7 @@ const AreaTop = () => {
       key: "selection",
     },
   ]);
+
   const [showDatePicker, setShowDatePicker] = useState(false);
   const dateRangeRef = useRef(null);
 
